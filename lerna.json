@@ -1,0 +1,10 @@
+{
+  "lerna": "2.5.1",
+  "packages": [
+    "packages/client/*",
+    "packages/common/*",
+    "packages/server/*"
+  ],
+  "version": "independent",
+  "independent": true
+}
