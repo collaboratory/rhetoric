@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Component should render as a link when the to prop is present 1`] = `
+<WithTheme(Styled(ButtonLinkFilter))
+  to="/"
+/>
+`;
+
+exports[`Button Component should render without throwing an error 1`] = `<WithTheme(styled.button) />`;
+
+exports[`ButtonStyled Component should properly utilize the block prop 1`] = `
+<styled.button
+  block={true}
+/>
+`;
+
+exports[`ButtonStyled Component should properly utilize the float prop 1`] = `
+<button
+  className="sc-bdVaJa dovBCI"
+/>
+`;

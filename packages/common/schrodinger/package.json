@@ -1,0 +1,8 @@
+{
+  "name": "@collaboratory/schrodinger",
+  "description": "Node & Browser performance and profiling tool",
+  "authors": "Andrew Ewing <drew@collaboratory.io>",
+  "version": "0.0.0",
+  "main": "src/main.js",
+  "dependencies": {}
+}

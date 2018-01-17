@@ -1,0 +1,8 @@
+{
+  "name": "@collaboratory/craft-server-middleware-logging",
+  "description": "Logging middleware for Craft servers",
+  "authors": "Andrew Ewing <drew@collaboratory.io>",
+  "version": "0.0.0",
+  "main": "dist/main.js",
+  "dependencies": {}
+}

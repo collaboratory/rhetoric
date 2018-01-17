@@ -1,0 +1,8 @@
+{
+  "name": "@collaboratory/craft-server",
+  "description": "The core of the craft server",
+  "authors": "Andrew Ewing <drew@collaboratory.io>",
+  "version": "0.0.0",
+  "main": "dist/main.js",
+  "dependencies": {}
+}

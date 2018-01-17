@@ -1,0 +1,42 @@
+{
+  "name": "@collaboratory/craft-client",
+  "description": "The craft client package",
+  "authors": "Andrew Ewing <drew@collaboratory.io>",
+  "version": "0.0.0",
+  "main": "dist/main.js",
+  "module": "dist/main.js",
+  "files": ["dist/", "src/", "README.md"],
+  "scripts": {
+    "post-build":
+      "babel -d dist/ -D --compact --minified src/ --ignore '**/*.test.js,**/__tests__'",
+    "lint": "eslint src/",
+    "lint-fix": "eslint src/ --fix",
+    "clean": "rm dist/main.js",
+    "build-clean": "npm run lint-fix && npm run clean && npm run build"
+  },
+  "peerDependencies": {
+    "@collaboratory/craft-client-forge": "0.0.0",
+    "@collaboratory/craft-client-component-button": "0.0.0",
+    "@collaboratory/craft-client-component-datatable": "0.0.0",
+    "@collaboratory/craft-client-component-emitter": "0.0.0",
+    "@collaboratory/craft-client-component-form": "0.0.0",
+    "@collaboratory/craft-client-component-grid": "0.0.0",
+    "@collaboratory/craft-client-component-loading-indicator": "0.0.0",
+    "@collaboratory/craft-client-component-message": "0.0.0",
+    "@collaboratory/craft-client-component-observable": "0.0.0",
+    "@collaboratory/craft-client-component-page": "0.0.0",
+    "@collaboratory/craft-client-component-paginator": "0.0.0",
+    "@collaboratory/craft-client-component-panel": "0.0.0",
+    "@collaboratory/craft-client-component-queue": "0.0.0",
+    "@collaboratory/craft-client-component-service": "0.0.0",
+    "@collaboratory/craft-client-component-sidebar": "0.0.0",
+    "@collaboratory/craft-client-component-socket": "0.0.0",
+    "@collaboratory/craft-client-component-table": "0.0.0",
+    "@collaboratory/craft-client-service-analytics": "0.0.0",
+    "@collaboratory/craft-client-service-auth": "0.0.0",
+    "@collaboratory/craft-client-service-emitter": "0.0.0",
+    "@collaboratory/craft-client-service-storage": "0.0.0",
+    "@collaboratory/craft-client-theme-default": "0.0.0",
+    "@collaboratory/craft-client-util-styled": "0.0.0"
+  }
+}

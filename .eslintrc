@@ -8,7 +8,7 @@
     "prettier/react",
     "prettier/standard"
   ],
-  "plugins": ["flowtype", "react", "prettier", "standard"],
+  "plugins": ["jest", "flowtype", "react", "prettier", "standard"],
   "parserOptions": {
     "sourceType": "module",
     "ecmaFeatures": {
@@ -17,7 +17,8 @@
   },
   "env": {
     "es6": true,
-    "node": true
+    "node": true,
+    "jest/globals": true
   },
   "rules": {
     "prettier/prettier": "error"

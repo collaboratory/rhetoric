@@ -1,0 +1,26 @@
+{
+  "name": "@collaboratory/craft-client-component-modal",
+  "description": "A root level modal container for Craft client",
+  "authors": "Andrew Ewing <drew@collaboratory.io>",
+  "version": "0.0.0",
+  "main": "dist/main.js",
+  "module": "dist/main.js",
+  "files": ["dist/", "src/", "README.md"],
+  "scripts": {
+    "build":
+      "babel -d dist/ -D --compact --minified src/ --ignore '**/*.test.js,**/__tests__'",
+    "lint": "eslint src/",
+    "lint-fix": "eslint src/ --fix",
+    "clean": "rm dist/main.js",
+    "build-clean": "npm run lint-fix && npm run clean && npm run build"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "mitt": "^1.1.2",
+    "prop-types": "^15.6.0",
+    "styled-components": "^2.2.4"
+  },
+  "peerDependencies": {
+    "react": "^16.2.0"
+  }
+}

@@ -1,0 +1,85 @@
+0 silly input [ 'build' ]
+1 silly flags { _: [ 'run' ],
+1 silly flags   'reject-cycles': false,
+1 silly flags   rejectCycles: false,
+1 silly flags   script: 'build',
+1 silly flags   args: [] }
+2 verbose rootPath /Users/aewing/projects/aegis-craft
+3 info version 2.5.1
+4 info versioning independent
+5 silly existsSync /Users/aewing/projects/aegis-craft/VERSION
+6 silly initialize attempt
+7 silly initialize success
+8 silly execute attempt
+9 silly runScriptInDir build [] component-app
+10 silly getExecOpts { cwd: '/Users/aewing/projects/aegis-craft/packages/client/component-app' }
+11 silly runScriptInDir build [] component-grid
+12 silly getExecOpts { cwd: '/Users/aewing/projects/aegis-craft/packages/client/component-grid' }
+13 silly runScriptInDir build [] component-loading-indicator
+14 silly getExecOpts { cwd: '/Users/aewing/projects/aegis-craft/packages/client/component-loading-indicator' }
+15 silly runScriptInDir build [] component-message
+16 silly getExecOpts { cwd: '/Users/aewing/projects/aegis-craft/packages/client/component-message' }
+17 silly runScriptInDir build [] component-modal
+18 silly getExecOpts { cwd: '/Users/aewing/projects/aegis-craft/packages/client/component-modal' }
+19 silly runScriptInDir build [] component-observable
+20 silly getExecOpts { cwd: '/Users/aewing/projects/aegis-craft/packages/client/component-observable' }
+21 silly runScriptInDir build [] component-page
+22 silly getExecOpts { cwd: '/Users/aewing/projects/aegis-craft/packages/client/component-page' }
+23 silly runScriptInDir build [] component-panel
+24 silly getExecOpts { cwd: '/Users/aewing/projects/aegis-craft/packages/client/component-panel' }
+25 silly runScriptInDir build [] component-queue
+26 silly getExecOpts { cwd: '/Users/aewing/projects/aegis-craft/packages/client/component-queue' }
+27 silly runScriptInDir build [] component-service
+28 silly getExecOpts { cwd: '/Users/aewing/projects/aegis-craft/packages/client/component-service' }
+29 silly runScriptInDir build [] component-sidebar
+30 silly getExecOpts { cwd: '/Users/aewing/projects/aegis-craft/packages/client/component-sidebar' }
+31 silly runScriptInDir build [] component-socket
+32 silly getExecOpts { cwd: '/Users/aewing/projects/aegis-craft/packages/client/component-socket' }
+33 silly runScriptInDir build [] component-table
+34 silly getExecOpts { cwd: '/Users/aewing/projects/aegis-craft/packages/client/component-table' }
+35 silly runScriptInDir build [] service-analytics
+36 silly getExecOpts { cwd: '/Users/aewing/projects/aegis-craft/packages/client/service-analytics' }
+37 silly runScriptInDir build [] service-auth
+38 silly getExecOpts { cwd: '/Users/aewing/projects/aegis-craft/packages/client/service-auth' }
+39 silly runScriptInDir build [] service-storage
+40 silly getExecOpts { cwd: '/Users/aewing/projects/aegis-craft/packages/client/service-storage' }
+41 silly runScriptInDir build [] theme-default
+42 silly getExecOpts { cwd: '/Users/aewing/projects/aegis-craft/packages/client/theme-default' }
+43 silly runScriptInDir build [] util-styled
+44 silly getExecOpts { cwd: '/Users/aewing/projects/aegis-craft/packages/client/util-styled' }
+45 silly runScriptInDir build [] beware
+46 silly getExecOpts { cwd: '/Users/aewing/projects/aegis-craft/packages/common/beware' }
+47 silly runScriptInDir build [] map-factory
+48 silly getExecOpts { cwd: '/Users/aewing/projects/aegis-craft/packages/common/map-factory' }
+49 error build Errored while running script in 'beware'
+50 error execute callback with error
+51 error Error: Command failed: npm run build
+51 error Error: Couldn't find preset "latest" relative to directory "/Users/aewing/projects/aegis-craft/packages/common/beware"
+51 error     at /usr/local/lib/node_modules/babel-cli/node_modules/babel-core/lib/transformation/file/options/option-manager.js:293:19
+51 error     at Array.map (<anonymous>)
+51 error     at OptionManager.resolvePresets (/usr/local/lib/node_modules/babel-cli/node_modules/babel-core/lib/transformation/file/options/option-manager.js:275:20)
+51 error     at OptionManager.mergePresets (/usr/local/lib/node_modules/babel-cli/node_modules/babel-core/lib/transformation/file/options/option-manager.js:264:10)
+51 error     at OptionManager.mergeOptions (/usr/local/lib/node_modules/babel-cli/node_modules/babel-core/lib/transformation/file/options/option-manager.js:249:14)
+51 error     at OptionManager.init (/usr/local/lib/node_modules/babel-cli/node_modules/babel-core/lib/transformation/file/options/option-manager.js:368:12)
+51 error     at File.initOptions (/usr/local/lib/node_modules/babel-cli/node_modules/babel-core/lib/transformation/file/index.js:212:65)
+51 error     at new File (/usr/local/lib/node_modules/babel-cli/node_modules/babel-core/lib/transformation/file/index.js:135:24)
+51 error     at Pipeline.transform (/usr/local/lib/node_modules/babel-cli/node_modules/babel-core/lib/transformation/pipeline.js:46:16)
+51 error     at transform (/usr/local/lib/node_modules/babel-cli/lib/babel/util.js:50:22)
+51 error npm ERR! code ELIFECYCLE
+51 error npm ERR! errno 1
+51 error npm ERR! beware@0.0.4 build: `babel src/ -d dist/`
+51 error npm ERR! Exit status 1
+51 error npm ERR!
+51 error npm ERR! Failed at the beware@0.0.4 build script.
+51 error npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+51 error npm WARN Local package.json exists, but node_modules missing, did you mean to install?
+51 error
+51 error npm ERR! A complete log of this run can be found in:
+51 error npm ERR!     /Users/aewing/.npm/_logs/2017-12-05T01_36_33_483Z-debug.log
+51 error
+51 error > beware@0.0.4 build /Users/aewing/projects/aegis-craft/packages/common/beware
+51 error > babel src/ -d dist/
+51 error
+51 error
+51 error     at Promise.all.then.arr (/usr/local/lib/node_modules/lerna/node_modules/execa/index.js:236:11)
+51 error     at <anonymous>
