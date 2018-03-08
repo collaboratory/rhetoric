@@ -1,0 +1,19 @@
+{
+  "name": "@collaboratory/craft-client-component-grid",
+  "description": "A grid component",
+  "authors": "Andrew Ewing <drew@collaboratory.io>",
+  "version": "0.0.0",
+  "main": "dist/main.js",
+  "files": ["dist/main.js", "README.md"],
+  "scripts": {
+    "build":
+      "babel -d dist/ -D --compact --minified src/ --ignore '**/*.test.js,**/__tests__'",
+    "lint": "eslint src/",
+    "lint-fix": "eslint src/ --fix",
+    "clean": "rm dist/main.js",
+    "build-clean": "npm run lint-fix && npm run clean && npm run build"
+  },
+  "dependencies": {
+    "@collaboratory/craft-client-forge": "0.0.0"
+  }
+}

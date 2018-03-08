@@ -1,0 +1,32 @@
+{
+  "name": "@collaboratory/craft-client-example",
+  "description": "Example configuration for Craft client",
+  "authors": "Andrew Ewing <drew@collaboratory.io>",
+  "version": "0.0.0",
+  "main": "dist/main.js",
+  "private": true,
+  "scripts": {
+    "start": "forge default"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ],
+    "plugins": [
+      "transform-class-properties",
+      "transform-object-rest-spread"
+    ]
+  },
+  "dependencies": {
+    "@collaboratory/craft-client": "0.0.0",
+    "@collaboratory/craft-client-forge": "0.0.0",
+    "@collaboratory/craft-client-component-page": "0.0.0",
+    "@collaboratory/craft-client-theme-default": "0.0.0",
+    "@collaboratory/craft-client-component-button": "0.0.0"
+  },
+  "devDependencies": {
+    "express": "^4.16.2",
+    "http-proxy-middleware": "^0.17.4"
+  }
+}

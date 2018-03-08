@@ -1,0 +1,20 @@
+{
+  "name": "@collaboratory/craft-client-component-page",
+  "description": "Page components",
+  "authors": "Andrew Ewing <drew@collaboratory.io>",
+  "version": "0.0.0",
+  "main": "dist/main.js",
+  "module": "dist/main.js",
+  "files": ["dist/", "src/", "README.md"],
+  "scripts": {
+    "build":
+      "babel -d dist/ -D --compact --minified src/ --ignore '**/*.test.js,**/__tests__'",
+    "lint": "eslint src/",
+    "lint-fix": "eslint src/ --fix",
+    "clean": "rm dist/main.js",
+    "build-clean": "npm run lint-fix && npm run clean && npm run build"
+  },
+  "dependencies": {
+    "@collaboratory/craft-client-forge": "0.0.0"
+  }
+}

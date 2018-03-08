@@ -1,0 +1,8 @@
+{
+  "name": "@collaboratory/craft-server-middleware-queue",
+  "description": "Queue middleware for Craft server",
+  "authors": "Andrew Ewing <drew@collaboratory.io>",
+  "version": "0.0.0",
+  "main": "dist/main.js",
+  "dependencies": {}
+}
