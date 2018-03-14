@@ -4,6 +4,7 @@
   "authors": "Andrew Ewing <drew@collaboratory.io>",
   "version": "0.0.0",
   "main": "dist/main.js",
+  "private": true,
   "scripts": {
     "start": "forge default"
   },

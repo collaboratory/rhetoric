@@ -1,12 +1,10 @@
 const { Middleware } = require("./Middleware");
-
 describe("Middleware", () => {
   it("should allow addition of a single middleware method", () => {
     const stack = new Middleware();
     const appended = stack.use(() => {});
     expect(appended).toBeTruthy();
   });
-
   it("should allow addition of multiple middleware methods", () => {
     const stack = new Middleware();
     const appended = stack.use([() => {}, () => {}]);
@@ -92,7 +90,7 @@ describe("Middleware", () => {
     expect(o.test).toBe(3);
   });
 
-  it("should allow asynchronous execution", async () => {
+  it("should allow asynchronous execution", () => {
     const stack = new Middleware();
     const o = { test: 0 };
 
@@ -106,17 +104,20 @@ describe("Middleware", () => {
       await next();
     });
 
-    stack.use(async (ctx, next) => {
-      await new Promise((resolve, reject) => {
+    stack.use((ctx, next) => {
+      Promise((resolve, reject) => {
         setTimeout(() => {
           resolve(true);
         }, 100);
       });
       ctx.test += 4;
-      await next();
+      next();
     });
 
-    await stack.compose()(o);
-    expect(o.test).toBe(7);
+    stack
+      .compose()(o)
+      .then(() => {
+        expect(o.test).toBe(7);
+      });
   });
 });

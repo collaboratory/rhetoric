@@ -3,7 +3,8 @@
   "packages": [
     "packages/client/*",
     "packages/common/*",
-    "packages/server/*"
+    "packages/server/*",
+    "examples/*"
   ],
   "version": "independent",
   "independent": true

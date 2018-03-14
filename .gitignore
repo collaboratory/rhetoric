@@ -1,5 +1,8 @@
-.fusebox/*
-.vscode/*
-node_modules/*
-dist/*
-packages/**/dist/*
+.fusebox/
+.vscode/
+.history/
+node_modules/
+dist/
+packages/**/dist/
+packages/**/node_modules/
+lerna-debug.log

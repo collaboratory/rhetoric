@@ -8,16 +8,14 @@ describe("Emitterware", function() {
 
   it("should allow addition of event handlers", () => {
     const instance = new Emitterware();
-    const added = instance.on("test", () => {});
-    expect(added).toBeTruthy();
+    instance.on("test", () => {});
     expect(instance.size()).toBe(1);
   });
 
   it("should allow removal of event handlers", () => {
     const method = () => {};
     const instance = new Emitterware();
-    const added = instance.on("test", method);
-    expect(added).toBeTruthy();
+    instance.on("test", method);
     expect(instance.size()).toBe(1);
     instance.off("test", method);
     expect(instance.size()).toBe(0);

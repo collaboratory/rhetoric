@@ -1,4 +1,4 @@
-import MapFactory from "./MapFactory";
+const { MapFactory } = require("./MapFactory");
 const config = { a: 1, b: 1 };
 
 function makeMethod() {

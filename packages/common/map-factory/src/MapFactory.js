@@ -1,4 +1,4 @@
-export default class MapFactory {
+export class MapFactory {
   /**
    * Create a new MapFactory
    * @param {callable} factory - The factory method to use when assigning new values
@@ -90,3 +90,4 @@ export default class MapFactory {
     this.defaultParams = defaultParams;
   }
 }
+export default MapFactory;
