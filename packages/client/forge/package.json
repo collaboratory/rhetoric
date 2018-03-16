@@ -8,5 +8,14 @@
     "forge": "bin/forge.js",
     "eslint": "../../../node_modules/eslint/bin/eslint.js"
   },
+  "babel": {
+    "presets": ["env"], 
+    "plugins": [ 
+      "transform-class-properties", 
+      "transform-object-rest-spread", 
+      "transform-export-extensions", 
+      "transform-runtime"
+    ] 
+  },
   "dependencies": {}
 }

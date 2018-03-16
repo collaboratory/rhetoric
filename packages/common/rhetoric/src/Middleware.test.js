@@ -90,7 +90,7 @@ describe("Middleware", () => {
     expect(o.test).toBe(3);
   });
 
-  it("should allow asynchronous execution", () => {
+  it("should allow asynchronous execution", async () => {
     const stack = new Middleware();
     const o = { test: 0 };
 
@@ -104,14 +104,12 @@ describe("Middleware", () => {
       await next();
     });
 
-    stack.use((ctx, next) => {
-      Promise((resolve, reject) => {
-        setTimeout(() => {
-          resolve(true);
-        }, 100);
+    stack.use(async (ctx, next) => {
+      await new Promise((resolve, reject) => {
+        setTimeout(resolve, 100);
       });
       ctx.test += 4;
-      next();
+      await next();
     });
 
     stack

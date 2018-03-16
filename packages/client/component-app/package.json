@@ -5,6 +5,20 @@
   "version": "0.0.0",
   "main": "dist/main.js",
   "module": "dist/main.js",
+  "jest": {
+    "verbose": true,
+    "debug": true
+  },
+  "babel": {
+    "presets": ["env", "react"], 
+    "plugins": [ 
+      "transform-class-properties", 
+      "transform-object-rest-spread", 
+      "transform-export-extensions", 
+      "transform-runtime", 
+      "transform-react-jsx" 
+    ] 
+  },
   "files": ["dist/", "src/", "README.md"],
   "scripts": {
     "build":

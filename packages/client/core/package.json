@@ -6,6 +6,16 @@
   "main": "dist/main.js",
   "module": "dist/main.js",
   "files": ["dist/", "src/", "README.md"],
+  "babel": {
+    "presets": ["env", "react"], 
+    "plugins": [ 
+      "transform-class-properties", 
+      "transform-object-rest-spread", 
+      "transform-export-extensions", 
+      "transform-runtime", 
+      "transform-react-jsx" 
+    ] 
+  },
   "scripts": {
     "post-build":
       "babel -d dist/ -D --compact --minified src/ --ignore '**/*.test.js,**/__tests__'",

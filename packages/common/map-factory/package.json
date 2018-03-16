@@ -5,6 +5,15 @@
   "version": "0.0.0",
   "main": "dist/main.js",
   "files": ["dist/main.js", "README.md"],
+  "babel": {
+    "presets": ["env"], 
+    "plugins": [ 
+      "transform-class-properties", 
+      "transform-object-rest-spread", 
+      "transform-export-extensions", 
+      "transform-runtime"
+    ] 
+  },
   "scripts": {
     "build":
       "babel -d dist/ -D --compact --minified src/ --ignore '**/*.test.js,**/__tests__'",

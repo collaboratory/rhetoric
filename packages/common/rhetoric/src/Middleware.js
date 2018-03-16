@@ -1,7 +1,10 @@
 // Middleware
 import { forAny } from "./util";
 export class Middleware {
-  stack = [];
+  constructor() {
+    this.stack = [];
+  }
+
   use(cb) {
     return forAny(cb, m => this.stack.push(m));
   }
@@ -22,22 +25,20 @@ export class Middleware {
         throw new TypeError("Middleware must be composed of functions!");
     }
 
-    return function(context, next) {
+    return async function(context, next) {
       let last = -1;
-      function stackAt(i) {
+      async function stackAt(i) {
         if (i <= last) {
           return Promise.reject(new Error("next() called multiple times"));
         }
 
         const fn = i === stack.length ? next : stack[i];
-        if (!fn) return Promise.resolve();
+        if (!fn) return;
         last = i;
         try {
-          return Promise.resolve(
-            fn(context, function() {
-              return stackAt(i + 1);
-            })
-          );
+          return await fn(context, function() {
+            return stackAt(i + 1);
+          });
         } catch (err) {
           return Promise.reject(err);
         }

@@ -4,5 +4,14 @@
   "authors": "Andrew Ewing <drew@collaboratory.io>",
   "version": "0.0.0",
   "main": "dist/main.js",
+  "babel": {
+    "presets": ["env"], 
+    "plugins": [ 
+      "transform-class-properties", 
+      "transform-object-rest-spread", 
+      "transform-export-extensions", 
+      "transform-runtime"
+    ] 
+  },
   "dependencies": {}
 }

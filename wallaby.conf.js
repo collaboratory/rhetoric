@@ -1,41 +1,49 @@
-module.exports = function(wallaby) {
+const path = require("path");
+module.exports = wallaby => {
+  process.env.NODE_PATH +=
+    path.delimiter + path.join(wallaby.projectCacheDir, "packages");
   /* eslint-disable no-path-concat */
   return {
     files: [
-      "packages/*/*/package.json",
-      "packages/*/*/src/**/*.+(js|jsx)",
-      "!packages/*/*/src/**/*.+(test|spec).js?(x)"
+      {
+        pattern: "packages/**"
+      },
+      {
+        pattern: "**/node_modules/**",
+        ignore: true
+      },
+      {
+        pattern: "**/dist/**",
+        ignore: true
+      },
+      {
+        pattern: "packages/**/*.test.js",
+        ignore: true
+      }
     ],
-    tests: ["packages/*/*/src/**/*.+(test|spec).js?(x)"],
+    tests: [
+      {
+        pattern: "packages/**/src/**/*.test.js"
+      },
+      {
+        pattern: "**/node_modules/**",
+        ignore: true
+      }
+    ],
+    compilers: {
+      "**/*.js?(x)": wallaby.compilers.babel()
+    },
+    loose: true,
+    delay: {
+      run: 1000
+    },
     env: {
       type: "node",
       runner: "node"
     },
     testFramework: "jest",
-    setup: w => {
-      wallaby.testFramework.configure({
-        setupFiles: [w.localProjectDir + "jest.setup.js"],
-        snapshotSerializers: ["enzyme-to-json/serializer"],
-        moduleNameMapper: {
-          "^@collaboratory/craft-client-(.+)":
-            w.localProjectDir + "packages/client/$1",
-          "^@collaboratory/craft-server-(.+)":
-            w.localProjectDir + "packages/server/$1",
-          "^@collaboratory/(.+)": w.localProjectDir + "packages/common/$1"
-        }
-      });
-    },
-    compilers: {
-      "**/*.js?(x)": wallaby.compilers.babel({
-        presets: ["env", "react"],
-        plugins: [
-          "transform-class-properties",
-          "transform-object-rest-spread",
-          "transform-export-extensions",
-          "transform-runtime",
-          "transform-react-jsx"
-        ]
-      })
-    }
+    filesWithNoCoverageCalculated: ["**/node_modules/**"],
+    debug: true,
+    reportConsoleErrorAsError: true
   };
 };
