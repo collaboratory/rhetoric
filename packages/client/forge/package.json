@@ -1,21 +1,22 @@
 {
-  "name": "@collaboratory/craft-client-forge",
+  "name": "@collaboratory/craft-forge",
   "description": "Client build tool",
   "authors": "Andrew Ewing <drew@collaboratory.io>",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "main": "dist/main.js",
   "bin": {
     "forge": "bin/forge.js",
     "eslint": "../../../node_modules/eslint/bin/eslint.js"
   },
   "babel": {
-    "presets": ["env"], 
-    "plugins": [ 
-      "transform-class-properties", 
-      "transform-object-rest-spread", 
-      "transform-export-extensions", 
+    "presets": [
+      "env"
+    ],
+    "plugins": [
+      "transform-class-properties",
+      "transform-object-rest-spread",
+      "transform-export-extensions",
       "transform-runtime"
-    ] 
-  },
-  "dependencies": {}
+    ]
+  }
 }

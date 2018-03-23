@@ -1,8 +1,8 @@
 {
-  "name": "@collaboratory/craft-client-component-app",
+  "name": "@collaboratory/craft-component-app",
   "description": "The root application container of Craft applications",
   "authors": "Andrew Ewing <drew@collaboratory.io>",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "main": "dist/main.js",
   "module": "dist/main.js",
   "jest": {
@@ -10,19 +10,24 @@
     "debug": true
   },
   "babel": {
-    "presets": ["env", "react"], 
-    "plugins": [ 
-      "transform-class-properties", 
-      "transform-object-rest-spread", 
-      "transform-export-extensions", 
-      "transform-runtime", 
-      "transform-react-jsx" 
-    ] 
+    "presets": [
+      "env",
+      "react"
+    ],
+    "plugins": [
+      "transform-class-properties",
+      "transform-object-rest-spread",
+      "transform-export-extensions",
+      "transform-runtime",
+      "transform-react-jsx"
+    ]
   },
-  "files": ["dist/", "src/", "README.md"],
+  "files": [
+    "dist/",
+    "README.md"
+  ],
   "scripts": {
-    "build":
-      "babel -d dist/ -D --compact --minified src/ --ignore '**/*.test.js,**/__tests__'",
+    "build": "babel -d dist/ -D --compact --minified src/ --ignore '**/*.test.js,**/__tests__'",
     "build-forge": "forge component",
     "lint": "eslint src/",
     "lint-fix": "eslint src/ --fix",
@@ -30,12 +35,12 @@
     "build-clean": "npm run lint-fix && npm run clean && npm run build"
   },
   "dependencies": {
-    "styled-components": "^2.2.4",
-    "styled-reset": "^0.1.3",
     "polished": "^1.9.0",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
-    "react-router-dom": "^4.2.2"
+    "react-router-dom": "^4.2.2",
+    "styled-components": "^2.2.4",
+    "styled-reset": "^0.1.3"
   },
   "peerDependencies": {
     "react": "^16.2.0"

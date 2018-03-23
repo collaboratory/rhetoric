@@ -1,15 +1,15 @@
 {
   "name": "@collaboratory/example-full",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@collaboratory/craft-server": "^0.0",
-    "@collaboratory/craft-server-provider-web": "^0.0",
-    "rhetoric": "^0.0"
+    "@collaboratory/emitterware-provider-web": "^0.1.0",
+    "@collaboratory/emitterware-server": "^0.1.0",
+    "rhetoric": "^0.1.0"
   },
   "author": "",
   "license": "ISC"

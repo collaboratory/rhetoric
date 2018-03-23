@@ -1,36 +1,33 @@
 {
-  "name": "@collaboratory/craft-server",
-  "description": "The core of the craft server",
+  "name": "@collaboratory/emitterware-server",
+  "description": "The core of the emitterware server",
   "authors": "Andrew Ewing <drew@collaboratory.io>",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "main": "dist/main.js",
   "babel": {
-    "presets": ["env"], 
-    "plugins": [ 
-      "transform-class-properties", 
-      "transform-object-rest-spread", 
-      "transform-export-extensions", 
+    "presets": [
+      "env"
+    ],
+    "plugins": [
+      "transform-class-properties",
+      "transform-object-rest-spread",
+      "transform-export-extensions",
       "transform-runtime"
-    ] 
+    ]
   },
   "scripts": {
-    "build":
-      "babel -d dist/ -D --compact --minified src/ --ignore '**/*.test.js,**/__tests__'",
-    "watch":
-      "babel --watch -d dist/ -D --compact --minified src/ --ignore '**/*.test.js,**/__tests__'",
+    "build": "babel -d dist/ -D --compact --minified src/ --ignore '**/*.test.js,**/__tests__'",
+    "watch": "babel --watch -d dist/ -D --compact --minified src/ --ignore '**/*.test.js,**/__tests__'",
     "benchmark": "node benchmark",
-    "benchmark-watch":
-      "npm run benchmark-watch-emitters & npm run benchmark-watch-middleware",
-    "benchmark-watch-emitters":
-      "nodemon --watch 'dist/Emitter.js' --watch 'dist/Emitterware.js' --watch 'benchmark/emitters.js' --exec 'node benchmark/emitters'",
-    "benchmark-watch-middleware":
-      "nodemon --watch 'dist/Middleware.js' --watch 'benchmark/middleware.js' --exec 'node benchmark/middleware'",
+    "benchmark-watch": "npm run benchmark-watch-emitters & npm run benchmark-watch-middleware",
+    "benchmark-watch-emitters": "nodemon --watch 'dist/Emitter.js' --watch 'dist/Emitterware.js' --watch 'benchmark/emitters.js' --exec 'node benchmark/emitters'",
+    "benchmark-watch-middleware": "nodemon --watch 'dist/Middleware.js' --watch 'benchmark/middleware.js' --exec 'node benchmark/middleware'",
     "lint": "eslint src/",
     "lint-fix": "eslint src/ --fix",
     "clean": "rm dist/main.js",
     "build-clean": "npm run lint-fix && npm run clean && npm run build"
   },
   "dependencies": {
-    "rhetoric": "^0.0"
+    "rhetoric": "^0.1.0"
   }
 }

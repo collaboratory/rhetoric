@@ -1,30 +1,35 @@
 {
-  "name": "@collaboratory/craft-client-component-page",
+  "name": "@collaboratory/craft-component-page",
   "description": "Page components",
   "authors": "Andrew Ewing <drew@collaboratory.io>",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "main": "dist/main.js",
   "module": "dist/main.js",
-  "files": ["dist/", "src/", "README.md"],
+  "files": [
+    "dist/",
+    "README.md"
+  ],
   "babel": {
-    "presets": ["env", "react"], 
-    "plugins": [ 
-      "transform-class-properties", 
-      "transform-object-rest-spread", 
-      "transform-export-extensions", 
-      "transform-runtime", 
-      "transform-react-jsx" 
-    ] 
+    "presets": [
+      "env",
+      "react"
+    ],
+    "plugins": [
+      "transform-class-properties",
+      "transform-object-rest-spread",
+      "transform-export-extensions",
+      "transform-runtime",
+      "transform-react-jsx"
+    ]
   },
   "scripts": {
-    "build":
-      "babel -d dist/ -D --compact --minified src/ --ignore '**/*.test.js,**/__tests__'",
+    "build": "babel -d dist/ -D --compact --minified src/ --ignore '**/*.test.js,**/__tests__'",
     "lint": "eslint src/",
     "lint-fix": "eslint src/ --fix",
     "clean": "rm dist/main.js",
     "build-clean": "npm run lint-fix && npm run clean && npm run build"
   },
   "dependencies": {
-    "@collaboratory/craft-client-forge": "0.0.0"
+    "@collaboratory/craft-forge": "^0.1.0"
   }
 }

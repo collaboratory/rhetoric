@@ -1,15 +1,15 @@
-import { Emitterware } from "rhetoric";
-export class CraftServer {
+import { Emitterware as EmitterwareStack } from "rhetoric";
+export class Emitterware {
   constructor(options = {}) {
     this.options = options;
     this.providers = new Map();
-    this.stack = new Emitterware();
+    this.stack = new EmitterwareStack();
   }
 
   addProvider(name, provider) {
     if (this.providers.has(name)) {
       throw new Error(
-        "CraftServer already has a provider registered for '" + name + "'"
+        "Emitterware already has a provider registered for '" + name + "'"
       );
     }
 
@@ -31,4 +31,4 @@ export class CraftServer {
     this.stack.emit(provider, ctx);
   }
 }
-export default CraftServer;
+export default Emitterware;
