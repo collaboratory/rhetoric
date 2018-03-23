@@ -5,6 +5,9 @@
   "version": "0.1.0",
   "main": "dist/main.js",
   "module": "dist/main.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "jest": {
     "verbose": true,
     "debug": true

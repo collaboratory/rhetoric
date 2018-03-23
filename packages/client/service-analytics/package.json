@@ -8,6 +8,9 @@
     "dist/main.js",
     "README.md"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "babel": {
     "presets": [
       "env"

@@ -4,6 +4,9 @@
   "authors": "Andrew Ewing <drew@collaboratory.io>",
   "version": "0.1.0",
   "main": "src/main.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "babel": {
     "presets": [
       "env"

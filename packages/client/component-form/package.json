@@ -9,6 +9,9 @@
     "dist/",
     "README.md"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "babel": {
     "presets": [
       "env",
