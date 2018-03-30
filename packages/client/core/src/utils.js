@@ -1,4 +1,4 @@
-import * as StyledUtil from "@collaboratory/craft-client-util-styled";
+import * as StyledUtil from "@collaboratory/craft-util-styled";
 
 const Util = {
   StyledUtil

@@ -150,6 +150,10 @@ const background = props => {
 };
 module.exports.background = background;
 
+const float = ({ float }) => {
+  return float && `float: ${float};`;
+};
+
 const overrides = css`
   ${space};
   ${width};
@@ -160,6 +164,7 @@ const overrides = css`
   ${borderColor};
   ${borderRadius};
   ${textAlign};
+  ${float};
 `;
 module.exports.overrides = overrides;
 module.exports.default = overrides;
@@ -174,5 +179,6 @@ const buttonOverrides = css`
   ${border};
   ${borderRadius};
   ${textAlign};
+  ${float};
 `;
 module.exports.buttonOverrides = buttonOverrides;

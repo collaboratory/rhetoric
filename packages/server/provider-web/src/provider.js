@@ -61,13 +61,15 @@ export function WebContext(req = null, res = null, error = null, data = {}) {
     request: {
       url,
       query,
-      data: []
+      data: [],
+      raw: () => req
     },
     response: {
       status: 200,
       head: {},
       trailers: {},
-      body: ""
+      body: "",
+      raw: () => res
     },
     ...data
   };

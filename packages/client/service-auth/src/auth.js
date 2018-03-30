@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import { get } from "lodash";
 
-import Emitter from "@collaboratory/craft-client-service-emitter";
-import Storage from "@collaboratory/craft-client-service-storage";
+import Emitter from "@collaboratory/craft-service-emitter";
+import Storage from "@collaboratory/craft-service-storage";
 
 const authObserver = Emitter.get("auth");
 const authStorage = Storage.get("auth");

@@ -1,9 +1,9 @@
-import { Emitterware as EmitterwareStack } from "rhetoric";
-export class Emitterware {
+import { Emitterware } from "rhetoric";
+export class EmitterwareServer {
   constructor(options = {}) {
     this.options = options;
     this.providers = new Map();
-    this.stack = new EmitterwareStack();
+    this.stack = new Emitterware();
   }
 
   addProvider(name, provider) {
@@ -31,4 +31,4 @@ export class Emitterware {
     this.stack.emit(provider, ctx);
   }
 }
-export default Emitterware;
+export default EmitterwareServer;

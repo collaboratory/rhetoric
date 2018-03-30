@@ -27,8 +27,8 @@ export class Router {
   }
 
   static regexify(string = "", keys = []) {
-    const lString = string;
-    const lKeys  = [...keys];
+    let lString = string;
+    const lKeys = [...keys];
     const matches = (string + "").match(/\/:([^/]+)/gi);
     if (matches) {
       matches.map(action => {

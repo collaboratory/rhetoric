@@ -2,7 +2,7 @@
   "name": "@collaboratory/craft-component-modal",
   "description": "A root level modal container for Craft client",
   "authors": "Andrew Ewing <drew@collaboratory.io>",
-  "version": "0.1.0",
+  "version": "0.0.5",
   "main": "dist/main.js",
   "module": "dist/main.js",
   "files": [
@@ -36,9 +36,10 @@
     "lodash": "^4.17.4",
     "mitt": "^1.1.2",
     "prop-types": "^15.6.0",
-    "styled-components": "^2.2.4"
+    "styled-components": "^3.2.3"
   },
   "peerDependencies": {
-    "react": "^16.2.0"
+    "react": "^16.2.0",
+    "styled-components": "^3.2.3"
   }
 }

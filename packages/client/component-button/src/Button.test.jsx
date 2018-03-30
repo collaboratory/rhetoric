@@ -4,7 +4,7 @@ import { shallow } from "enzyme";
 import Button from "./Button";
 import { ButtonStyled } from "./ButtonStyled";
 import { ThemeProvider } from "styled-components";
-import DefaultTheme from "@collaboratory/craft-client-theme-default";
+import DefaultTheme from "@collaboratory/craft-theme-default";
 
 describe("Button Component", () => {
   it("should render without throwing an error", () => {

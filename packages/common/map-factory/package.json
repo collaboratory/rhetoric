@@ -2,10 +2,10 @@
   "name": "@collaboratory/map-factory",
   "description": "A map factory utility",
   "authors": "Andrew Ewing <contact@aewing.io>",
-  "version": "0.1.0",
-  "main": "dist/main.js",
+  "version": "0.0.5",
+  "main": "dist/MapFactory.js",
   "files": [
-    "dist/main.js",
+    "dist/MapFactory.js",
     "README.md"
   ],
   "publishConfig": {
@@ -28,8 +28,5 @@
     "lint-fix": "eslint src/ --fix",
     "clean": "rm dist/main.js",
     "build-clean": "npm run lint-fix && npm run clean && npm run build"
-  },
-  "dependencies": {
-    "@collaboratory/craft-forge": "^0.1.0"
   }
 }

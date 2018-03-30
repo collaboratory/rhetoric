@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { Input } from "@collaboratory/craft-client-component-form";
+import { Input } from "@collaboratory/craft-component-form";
 import uniqid from "uuid/v4";
 
 import {

@@ -1,4 +1,4 @@
-import * as DefaultTheme from "@collaboratory/craft-client-theme-default";
+import * as DefaultTheme from "@collaboratory/craft-theme-default";
 
 const Themes = {
   DefaultTheme

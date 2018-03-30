@@ -2,10 +2,10 @@
   "name": "rhetoric",
   "description": "The faculty of observing, in any given case, the available means of persuasion.",
   "authors": "Andrew Ewing <drew@collaboratory.io>",
-  "version": "0.1.0",
+  "version": "0.0.5",
   "main": "dist/main.js",
   "files": [
-    "dist/main.js",
+    "dist/",
     "README.md"
   ],
   "publishConfig": {
@@ -35,7 +35,7 @@
     "build-clean": "npm run lint-fix && npm run clean && npm run build"
   },
   "dependencies": {
-    "@collaboratory/map-factory": "^0.1.0",
-    "@collaboratory/schrodinger": "^0.1.0"
+    "@collaboratory/map-factory": "^0.0.5",
+    "@collaboratory/schrodinger": "^0.0.5"
   }
 }

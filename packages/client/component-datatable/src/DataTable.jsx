@@ -11,7 +11,7 @@ import { merge } from "lodash";
 
 // Package components
 import { Flex, Box } from "grid-styled";
-import Paginator from "@collaboratory/craft-client-component-paginator";
+import Paginator from "@collaboratory/craft-component-paginator";
 import {
   Table,
   THead,
@@ -19,8 +19,8 @@ import {
   Col,
   HCol,
   Row
-} from "@collaboratory/craft-client-component-table";
-import LoadingIndicator from "@collaboratory/craft-client-component-loading-indicator";
+} from "@collaboratory/craft-component-table";
+import LoadingIndicator from "@collaboratory/craft-component-loading-indicator";
 
 // Local components
 import DataTableRoot from "./DataTableRoot";

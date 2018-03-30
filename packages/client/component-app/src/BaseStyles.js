@@ -1,63 +1,58 @@
 import { injectGlobal } from "styled-components";
-import { fontFace } from "polished";
 import reset from "styled-reset";
 
-function baseStyles(fromCDN = false) {
+const defaultFont = `"Operator Mono Lig", "Operator Mono", "Fira Code", "Menlo", sans-serif`;
+const defaultFonts = {
+  page: defaultFont,
+  heading: defaultFont,
+  input: defaultFont
+};
+
+function baseStyles(fonts = defaultFonts, fromCDN = false) {
   return injectGlobal`
     ${reset};
 
-    html, body {
+    html, body, #app {
+      font-family: ${fonts.page}
       height: 100%;
       width: 100%;
       overflow: hidden;
+      padding: 0;
+      margin: 0;
     }
 
     h1 {
-      font-family: 'Fjalla One', sans-serif;
+      font-family: ${fonts.heading};
       font-weight: normal;
       text-transform: uppercase;
+      font-size: 42px;
       line-height: 46px;
-      font-size: 43px;
-      margin: 0 0 23px 0;
     }
 
     h2 {
-      font-family: 'Cantarell', sans-serif;
+      font-family: ${fonts.heading};
       font-weight: 700;
-      font-size: 20px;
-      line-height: 23px;
+      font-size: 28px;
+      line-height: 32px;
       text-transform: uppercase;
       letter-spacing: -1px;
-      margin: 0 0 23px 0;
     }
 
-    html, body, p, input, select, label {
-      font-family: 'Cantarell', sans-serif;
-      font-size: 17px;
-      line-height: 23px;
+    html, body, p {
+      font-family: ${fonts.page};
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    input, select, label {
+      font-family: ${fonts.input};
+      font-size: 16px;
+      line-height: 24px;
     }
 
     p {
       margin: 0 0 23px 0;
     }
-
-    ${fontFace({
-      fontFamily: "Fjalla One",
-      fontFilePath: "/fonts/Fjalla_One/FjallaOne-Regular",
-      fileFormats: ["ttf"]
-    })};
-
-    ${fontFace({
-      fontFamily: "Cantarell",
-      fontFilePath: "/fonts/Cantarell/Cantarell-Regular",
-      fileFormats: ["ttf"]
-    })};
-    
-    ${fontFace({
-      fontFamily: "Cantarell Bold",
-      fontFilePath: "/fonts/Cantarell/Cantarell-Bold",
-      fileFormats: ["ttf"]
-    })};
   `;
 }
 export default baseStyles;

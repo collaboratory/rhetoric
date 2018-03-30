@@ -2,7 +2,7 @@
   "name": "@collaboratory/craft-service-storage",
   "description": "Storage service connector",
   "authors": "Andrew Ewing <drew@collaboratory.io>",
-  "version": "0.1.0",
+  "version": "0.0.5",
   "main": "dist/main.js",
   "files": [
     "dist/main.js",
@@ -28,8 +28,5 @@
     "lint-fix": "eslint src/ --fix",
     "clean": "rm dist/main.js",
     "build-clean": "npm run lint-fix && npm run clean && npm run build"
-  },
-  "dependencies": {
-    "@collaboratory/craft-forge": "^0.1.0"
   }
 }

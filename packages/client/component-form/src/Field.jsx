@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { overrides } from "@collaboratory/craft-client-util-styled";
+import { overrides } from "@collaboratory/craft-util-styled";
 import Label from "./Label";
 
 const Field = styled.div`

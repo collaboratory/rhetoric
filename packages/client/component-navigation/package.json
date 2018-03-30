@@ -1,0 +1,50 @@
+{
+  "name": "@collaboratory/craft-component-navigation",
+  "description": "Navigation component",
+  "authors": "Andrew Ewing <drew@collaboratory.io>",
+  "version": "0.0.1",
+  "main": "dist/main.js",
+  "module": "dist/main.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "jest": {
+    "verbose": true,
+    "debug": true
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ],
+    "plugins": [
+      "transform-class-properties",
+      "transform-object-rest-spread",
+      "transform-export-extensions",
+      "transform-runtime",
+      "transform-react-jsx"
+    ]
+  },
+  "files": [
+    "dist/",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "babel -d dist/ -D --compact --minified src/ --ignore '**/*.test.js,**/__tests__'",
+    "watch": "babel --watch -d dist/ -D --compact --minified src/ --ignore '**/*.test.js,**/__tests__'",
+    "build-forge": "forge component",
+    "lint": "eslint src/",
+    "lint-fix": "eslint src/ --fix",
+    "clean": "rm dist/main.js",
+    "build-clean": "npm run lint-fix && npm run clean && npm run build"
+  },
+  "dependencies": {
+    "@collaboratory/craft-component-button": "^0.0.5",
+    "prop-types": "^15.6.0"
+  },
+  "peerDependencies": {
+    "react": "^16.2.0",
+    "react-router-dom": "^4.2.2",
+    "styled-components": "^3.2.3"
+  }
+}

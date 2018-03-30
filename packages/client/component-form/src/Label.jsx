@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { overrides } from "@collaboratory/craft-client-util-styled";
+import { overrides } from "@collaboratory/craft-util-styled";
 
 const Label = styled.label`
   vertical-align: top;

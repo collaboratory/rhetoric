@@ -2,7 +2,7 @@
   "name": "@collaboratory/emitterware-middleware-queue",
   "description": "Queue middleware for Craft server",
   "authors": "Andrew Ewing <drew@collaboratory.io>",
-  "version": "0.1.0",
+  "version": "0.0.5",
   "main": "dist/main.js",
   "publishConfig": {
     "access": "public"

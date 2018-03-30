@@ -1,8 +1,7 @@
 import styled, { withTheme } from "styled-components";
-import { buttonOverrides } from "@collaboratory/craft-client-util-styled";
+import { buttonOverrides } from "@collaboratory/craft-util-styled";
 
 export const ButtonStyled = styled.button`
-  font-family: "Fjalla One", sans-serif;
   cursor: pointer;
   padding: 8px 20px;
   border-radius: 4px;

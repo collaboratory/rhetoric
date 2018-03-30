@@ -8,9 +8,9 @@ import {
   Title,
   Subtitle,
   Content
-} from "@collaboratory/craft-client-component-page";
-import Theme from "@collaboratory/craft-client-theme-default";
-import Button from "@collaboratory/craft-client-component-button";
+} from "@collaboratory/craft-component-page";
+import Theme from "@collaboratory/craft-theme-default";
+import Button from "@collaboratory/craft-component-button";
 
 const Hello = () => (
   <ThemeProvider theme={Theme}>

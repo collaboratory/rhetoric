@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { overrides } from "@collaboratory/craft-client-util-styled";
+import { overrides } from "@collaboratory/craft-util-styled";
 
 const SelectContainer = styled.div`
   font-weight: bolder;

@@ -1,19 +1,19 @@
-import * as Button from "@collaboratory/craft-client-component-button";
-import * as DataTable from "@collaboratory/craft-client-component-datatable";
-import * as Emitter from "@collaboratory/craft-client-component-emitter";
-import * as Form from "@collaboratory/craft-client-component-form";
-import * as Grid from "@collaboratory/craft-client-component-grid";
-import * as LoadingIndicator from "@collaboratory/craft-client-component-loading-indicator";
-import * as Message from "@collaboratory/craft-client-component-message";
-import * as Observable from "@collaboratory/craft-client-component-observable";
-import * as Page from "@collaboratory/craft-client-component-page";
-import * as Paginator from "@collaboratory/craft-client-component-paginator";
-import * as Panel from "@collaboratory/craft-client-component-panel";
-import * as Queue from "@collaboratory/craft-client-component-queue";
-import * as Service from "@collaboratory/craft-client-component-service";
-import * as Sidebar from "@collaboratory/craft-client-component-sidebar";
-import * as Socket from "@collaboratory/craft-client-component-socket";
-import * as Table from "@collaboratory/craft-client-component-table";
+import * as Button from "@collaboratory/craft-component-button";
+import * as DataTable from "@collaboratory/craft-component-datatable";
+import * as Emitter from "@collaboratory/craft-component-emitter";
+import * as Form from "@collaboratory/craft-component-form";
+import * as Grid from "@collaboratory/craft-component-grid";
+import * as LoadingIndicator from "@collaboratory/craft-component-loading-indicator";
+import * as Message from "@collaboratory/craft-component-message";
+import * as Observable from "@collaboratory/craft-component-observable";
+import * as Page from "@collaboratory/craft-component-page";
+import * as Paginator from "@collaboratory/craft-component-paginator";
+import * as Panel from "@collaboratory/craft-component-panel";
+import * as Queue from "@collaboratory/craft-component-queue";
+import * as Service from "@collaboratory/craft-component-service";
+import * as Sidebar from "@collaboratory/craft-component-sidebar";
+import * as Socket from "@collaboratory/craft-component-socket";
+import * as Table from "@collaboratory/craft-component-table";
 
 const Components = {
   Button,
