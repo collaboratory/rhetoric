@@ -16,6 +16,12 @@
       "**/__tests__/"
     ]
   },
+  "scripts": {
+    "watch": "lerna run watch --concurrency 8",
+    "build": "lerna run build --concurrency 8",
+    "publish": "lerna publish --skip-git --concurrency 8",
+    "bootstrap": "lerna bootstrap --hoist --concurrency 8"
+  },
   "quokka": {
     "babel": true
   },
@@ -40,6 +46,7 @@
     "bookshelf": "^0.13.3",
     "bookshelf-modelbase": "^2.10.4",
     "bookshelf-secure-password": "^3.0.1",
+    "browserslist": "^3.2.4",
     "bunyan": "^1.8.12",
     "bunyan-elasticsearch": "^1.0.1",
     "chalk": "^2.3.2",
@@ -66,7 +73,7 @@
     "ioredis": "^3.2.2",
     "jest": "^22.4.3",
     "jest-cli": "^22.4.3",
-    "jest-styled-components": "^4.10.0",
+    "jest-styled-components": "^5.0.0",
     "knex": "^0.14.4",
     "koa": "^2.5.0",
     "koa-bodyparser": "^4.2.0",
@@ -86,7 +93,6 @@
     "pretty-bytes": "^4.0.2",
     "prop-types": "^15.6.1",
     "react": "^16.2.0",
-    "react-addons-test-utils": "^15.6.2",
     "react-dom": "^16.2.0",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
