@@ -2,7 +2,7 @@
   "name": "@collaboratory/craft-component-sidebar",
   "description": "Sidebar component",
   "authors": "Andrew Ewing <drew@collaboratory.io>",
-  "version": "0.0.5",
+  "version": "0.1.1",
   "main": "dist/main.js",
   "module": "dist/main.js",
   "files": [

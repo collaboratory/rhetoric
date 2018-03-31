@@ -2,7 +2,7 @@
   "name": "@collaboratory/craft-component-loading-indicator",
   "description": "Loading indicator component",
   "authors": "Andrew Ewing <drew@collaboratory.io>",
-  "version": "0.0.5",
+  "version": "0.1.1",
   "main": "dist/main.js",
   "module": "dist/main.js",
   "files": [
@@ -27,6 +27,7 @@
   },
   "scripts": {
     "build": "babel -d dist/ -D --compact --minified src/ --ignore '**/*.test.js,**/__tests__'",
+    "watch": "babel --watch -d dist/ -D --compact --minified src/ --ignore '**/*.test.js,**/__tests__'",
     "lint": "eslint src/",
     "lint-fix": "eslint src/ --fix",
     "clean": "rm dist/main.js",

@@ -2,7 +2,7 @@
   "name": "@collaboratory/emitterware-middleware-logging",
   "description": "Logging middleware for Craft servers",
   "authors": "Andrew Ewing <drew@collaboratory.io>",
-  "version": "0.0.5",
+  "version": "0.1.1",
   "main": "dist/main.js",
   "publishConfig": {
     "access": "public"

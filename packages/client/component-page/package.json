@@ -2,7 +2,7 @@
   "name": "@collaboratory/craft-component-page",
   "description": "Page components",
   "authors": "Andrew Ewing <drew@collaboratory.io>",
-  "version": "0.0.5",
+  "version": "0.1.1",
   "main": "dist/main.js",
   "module": "dist/main.js",
   "files": [

@@ -38,8 +38,8 @@ export class Emitterware {
   cache(e, forceReload = false) {
     if (!this._cache[e] || forceReload) {
       this._cache[e] = Middleware.compose([
-        ...this.stack(e),
-        ...(e !== "*" && this.stack("*"))
+        ...(e !== "*" && this.stack("*")),
+        ...this.stack(e)
       ]);
     }
     return this._cache[e];

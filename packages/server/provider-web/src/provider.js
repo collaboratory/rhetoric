@@ -14,20 +14,22 @@ export function WebProvider({ port = 3000, host = "127.0.0.1", ...config }) {
   return (onRequest, service) => {
     const server = http.createServer((req, res) => {
       console.time("request");
-      WebContext(req).then(ctx => {
+      WebContext(req, res).then(ctx => {
         return Promise.resolve(onRequest(ctx, "web"))
           .then(() => {
-            if (ctx.response.body && typeof ctx.response.body !== "string") {
-              ctx.response.head["Content-Type"] = "text/json";
-              ctx.response.body = JSON.stringify(ctx.response.body);
-            }
+            if (!ctx.handled) {
+              inspectMemory();
+              if (ctx.response.body && typeof ctx.response.body !== "string") {
+                ctx.response.head["Content-Type"] = "text/json";
+                ctx.response.body = JSON.stringify(ctx.response.body);
+              }
 
-            res.writeHead(ctx.response.status, ctx.response.head);
-            res.write(ctx.response.body);
-            res.addTrailers(ctx.response.trailers);
-            inspectMemory();
-            console.timeEnd("request");
-            return res.end();
+              res.writeHead(ctx.response.status, ctx.response.head);
+              res.write(ctx.response.body);
+              res.addTrailers(ctx.response.trailers);
+              console.timeEnd("request");
+              return res.end();
+            }
           })
           .catch(err => {
             inspectMemory();
@@ -40,7 +42,9 @@ export function WebProvider({ port = 3000, host = "127.0.0.1", ...config }) {
     console.log(`Craft web provider listening at ${host}:${port}`);
     server.listen(port, host);
 
-    server.on("clientError", (err, socket) => onRequest(WebContext(null, err)));
+    server.on("clientError", (err, socket) =>
+      onRequest(WebContext(null, null, err))
+    );
   };
 }
 export default WebProvider;
@@ -51,6 +55,21 @@ function inspectMemory() {
       process.memoryUsage().heapUsed / 1024 / 1024 * 100
     )}MB`
   );
+}
+
+export function convertMiddleware(fn, finalize = false) {
+  return async (ctx, next) => {
+    try {
+      if (finalize) {
+        ctx.handled = true;
+      }
+      const req = ctx.request.raw();
+      const res = ctx.response.raw();
+      await fn(req, res, next);
+    } catch (e) {
+      console.error(e);
+    }
+  };
 }
 
 export function WebContext(req = null, res = null, error = null, data = {}) {

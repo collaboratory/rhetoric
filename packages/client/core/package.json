@@ -2,7 +2,7 @@
   "name": "@collaboratory/craft-client",
   "description": "The craft client package",
   "authors": "Andrew Ewing <drew@collaboratory.io>",
-  "version": "0.0.5",
+  "version": "0.1.1",
   "main": "dist/main.js",
   "module": "dist/main.js",
   "files": [
@@ -49,7 +49,6 @@
     "@collaboratory/craft-component-sidebar": "0.0.0",
     "@collaboratory/craft-component-socket": "0.0.0",
     "@collaboratory/craft-component-table": "0.0.0",
-    "@collaboratory/craft-forge": "0.0.0",
     "@collaboratory/craft-service-analytics": "0.0.0",
     "@collaboratory/craft-service-auth": "0.0.0",
     "@collaboratory/craft-service-emitter": "0.0.0",

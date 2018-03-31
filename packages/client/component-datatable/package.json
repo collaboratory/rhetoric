@@ -2,7 +2,7 @@
   "name": "@collaboratory/craft-component-datatable",
   "description": "craft datatable component",
   "authors": "Andrew Ewing <drew@collaboratory.io>",
-  "version": "0.0.5",
+  "version": "0.1.1",
   "main": "dist/main.js",
   "module": "dist/main.js",
   "files": [
@@ -33,9 +33,9 @@
     "build-clean": "npm run lint-fix && npm run clean && npm run build"
   },
   "dependencies": {
-    "@collaboratory/craft-component-loading-indicator": "^0.0.5",
-    "@collaboratory/craft-component-paginator": "^0.0.5",
-    "@collaboratory/craft-component-table": "^0.0.5"
+    "@collaboratory/craft-component-loading-indicator": "^0.1.1",
+    "@collaboratory/craft-component-paginator": "^0.1.1",
+    "@collaboratory/craft-component-table": "^0.1.1"
   },
   "peerDependencies": {
     "react": "^16.2.0",

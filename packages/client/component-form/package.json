@@ -2,7 +2,7 @@
   "name": "@collaboratory/craft-component-form",
   "description": "Form components",
   "authors": "Andrew Ewing <drew@collaboratory.io>",
-  "version": "0.0.5",
+  "version": "0.1.1",
   "main": "dist/main.js",
   "module": "dist/main.js",
   "files": [
@@ -33,7 +33,7 @@
     "build-clean": "npm run lint-fix && npm run clean && npm run build"
   },
   "dependencies": {
-    "@collaboratory/craft-util-styled": "^0.0.5"
+    "@collaboratory/craft-util-styled": "^0.1.1"
   },
   "peerDependencies": {
     "react": "^16.2.0",

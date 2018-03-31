@@ -4,7 +4,7 @@
     "packages/client/*",
     "packages/common/*",
     "packages/server/*",
-    "applications/aegisbot.io/*"
+    "applications/aegisbot.io/web"
   ],
   "version": "independent",
   "independent": true
