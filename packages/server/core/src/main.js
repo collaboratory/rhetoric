@@ -13,7 +13,10 @@ export class EmitterwareServer {
       );
     }
 
-    this.providers.set(name, provider(request => this.request(request, name)));
+    this.providers.set(
+      name,
+      provider(async request => this.request(request, name))
+    );
   }
 
   removeProvider(name) {
@@ -30,8 +33,9 @@ export class EmitterwareServer {
   }
   remove = this.removeMiddleware;
 
-  request(ctx, provider) {
-    this.stack.emit(provider, ctx);
+  async request(ctx, provider) {
+    await this.stack.emit(provider, ctx);
+    return ctx;
   }
 }
 export default EmitterwareServer;

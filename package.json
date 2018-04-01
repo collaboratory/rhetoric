@@ -17,10 +17,10 @@
     ]
   },
   "scripts": {
-    "watch": "lerna run watch --concurrency 8",
-    "build": "lerna run build --concurrency 8",
-    "publish": "lerna publish --skip-git --concurrency 8",
-    "bootstrap": "lerna bootstrap --hoist --concurrency 8"
+    "watch": "lerna run watch --concurrency 8 --parallel",
+    "build": "lerna run build --concurrency 8 --parallel",
+    "publish": "lerna publish --skip-git --concurrency 8 --parallel",
+    "bootstrap": "lerna bootstrap --hoist --concurrency 8 --parallel"
   },
   "quokka": {
     "babel": true

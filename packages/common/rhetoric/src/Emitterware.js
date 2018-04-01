@@ -7,22 +7,25 @@ export class Emitterware {
     this._cache = {};
   }
 
-  on(e, cb) {
-    this.stack(e).push(cb);
+  on(e, cb, priority = 0) {
+    this.stack(e).push({ cb, priority });
     this.cache(e, true);
   }
 
   off(e, cb) {
-    this.stack(e).splice(this.stack(e).indexOf(cb) >>> 0, 1);
+    const channel = this.stack(e);
+    channel.filter(o => o.cb === cb).map(entry => {
+      channel.splice(channel.indexOf(entry) >>> 0, 1);
+    });
     this.cache(e, true);
   }
 
-  emit(e, ...p) {
-    return this.cache(e)(...p);
+  emit(e, ctx, ...p) {
+    return this.cache(e)(ctx, ...p);
   }
 
   eventProxy(e) {
-    return (...p) => Middleware.compose(this.stack(e))(...p);
+    return (ctx, ...p) => this.cache(e)(ctx, ...p);
   }
 
   stack(named) {
@@ -35,14 +38,18 @@ export class Emitterware {
       .reduce((a, b) => a + b, 0);
   }
 
-  cache(e, forceReload = false) {
-    if (!this._cache[e] || forceReload) {
-      this._cache[e] = Middleware.compose([
-        ...(e !== "*" && this.stack("*")),
-        ...this.stack(e)
-      ]);
+  sorted(name) {
+    return [...(name !== "*" && this.stack("*")), ...this.stack(name)]
+      .filter(f => !!f && f)
+      .sort((a, b) => b.priority - a.priority)
+      .map(m => m.cb);
+  }
+
+  cache(name, forceReload = false) {
+    if (!this._cache[name] || forceReload) {
+      this._cache[name] = Middleware.compose(this.sorted(name));
     }
-    return this._cache[e];
+    return this._cache[name];
   }
 }
 export default Emitterware;

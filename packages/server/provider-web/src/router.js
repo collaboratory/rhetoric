@@ -41,15 +41,16 @@ export class Router {
     return [new RegExp(`^${string}$`, "i"), keys];
   }
 
-  middleware = (ctx, next) => {
+  middleware = async (ctx, next) => {
     for (let [key, value] of this.endpoints) {
       const match = Router.route(key, ctx.request.url);
       if (match) {
         ctx.request.match = match;
-        return value(ctx, next);
+        await value(ctx, next);
+        return;
       }
     }
-    next();
+    await next();
   };
 }
 export default Router;
