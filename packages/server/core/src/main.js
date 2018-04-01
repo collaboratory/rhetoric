@@ -6,28 +6,31 @@ export class EmitterwareServer {
     this.stack = new Emitterware();
   }
 
-  addProvider(name, provider) {
+  provider(name, provider) {
     if (this.providers.has(name)) {
       throw new Error(
         "Emitterware already has a provider registered for '" + name + "'"
       );
     }
 
-    this.providers.set(
-      name,
-      provider(request => this.onRequest(request, name))
-    );
+    this.providers.set(name, provider(request => this.request(request, name)));
   }
 
-  addMiddleware(method, emitter = "*") {
-    this.stack.on(emitter, method);
+  removeProvider(name) {
+    this.providers.remove(name);
   }
+
+  middleware(method, emitter = "*", priority = 0) {
+    this.stack.on(emitter, method, priority);
+  }
+  use = this.middleware;
 
   removeMiddleware(method, emitter = "*") {
     this.stack.off(emitter, method);
   }
+  remove = this.removeMiddleware;
 
-  onRequest(ctx, provider) {
+  request(ctx, provider) {
     this.stack.emit(provider, ctx);
   }
 }

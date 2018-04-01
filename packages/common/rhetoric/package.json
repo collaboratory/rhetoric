@@ -2,7 +2,7 @@
   "name": "rhetoric",
   "description": "The faculty of observing, in any given case, the available means of persuasion.",
   "authors": "Andrew Ewing <drew@collaboratory.io>",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "dist/main.js",
   "files": [
     "dist/",

@@ -17,7 +17,7 @@ export function WebProvider({ port = 3000, host = "127.0.0.1", ...config }) {
       WebContext(req, res).then(ctx => {
         return Promise.resolve(onRequest(ctx, "web"))
           .then(() => {
-            if (!ctx.handled) {
+            if (!ctx.done) {
               inspectMemory();
               if (ctx.response.body && typeof ctx.response.body !== "string") {
                 ctx.response.head["Content-Type"] = "text/json";
@@ -61,7 +61,7 @@ export function convertMiddleware(fn, finalize = false) {
   return async (ctx, next) => {
     try {
       if (finalize) {
-        ctx.handled = true;
+        ctx.done = true;
       }
       const req = ctx.request.raw();
       const res = ctx.response.raw();
@@ -80,6 +80,7 @@ export function WebContext(req = null, res = null, error = null, data = {}) {
     request: {
       url,
       query,
+      head: req.headers,
       data: [],
       raw: () => req
     },
@@ -103,7 +104,9 @@ export function WebContext(req = null, res = null, error = null, data = {}) {
         try {
           ctx.request.data = JSON.parse(ctx.request.data);
         } catch (e) {
-          ctx.request.data = qs.parse(ctx.request.data);
+          try {
+            ctx.request.data = qs.parse(ctx.request.data);
+          } catch (x) {}
         }
         resolve(ctx);
       })

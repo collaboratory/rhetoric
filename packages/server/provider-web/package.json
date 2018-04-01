@@ -2,7 +2,7 @@
   "name": "@collaboratory/emitterware-provider-web",
   "description": "Web provider for Craft server",
   "authors": "Andrew Ewing <drew@collaboratory.io>",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "main": "dist/main.js",
   "files": [
     "dist/",
