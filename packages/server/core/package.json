@@ -2,7 +2,7 @@
   "name": "@collaboratory/emitterware-server",
   "description": "The core of the emitterware server",
   "authors": "Andrew Ewing <drew@collaboratory.io>",
-  "version": "1.0.0-rc1",
+  "version": "1.0.0",
   "main": "dist/main.js",
   "publishConfig": {
     "access": "public"

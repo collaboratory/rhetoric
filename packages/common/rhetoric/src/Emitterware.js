@@ -41,7 +41,7 @@ export class Emitterware {
   sorted(name) {
     return [...(name !== "*" && this.stack("*")), ...this.stack(name)]
       .filter(f => !!f && f)
-      .sort((a, b) => b.priority - a.priority)
+      .sort((a, b) => a.priority - b.priority)
       .map(m => m.cb);
   }
 

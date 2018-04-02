@@ -23,9 +23,9 @@ export function WebProvider({ port = 3000, host = "127.0.0.1", ...config }) {
             ctx.response.body = JSON.stringify(ctx.response.body);
           }
 
-          ctx.response.headers["Set-Cookie"] = qs.stringify(
+          ctx.response.headers["Set-Cookie"] = Object.keys(
             ctx.response.cookies
-          );
+          ).map(key => `${key}=${ctx.response.cookies[key]}`);
 
           res.writeHead(ctx.response.status, ctx.response.headers);
           res.write(ctx.response.body);
@@ -67,6 +67,19 @@ export function convertMiddleware(fn, finalize = false) {
       }
       const req = ctx.request.raw();
       const res = ctx.response.raw();
+
+      // Set our cookies
+      if (Object.keys(ctx.response.cookies).length) {
+        ctx.response
+          .raw()
+          .setHeader(
+            "Set-Cookie",
+            Object.keys(ctx.response.cookies).map(
+              key => `${key}=${ctx.response.cookies[key]}`
+            )
+          );
+      }
+
       await fn(req, res, next);
     } catch (e) {
       console.error(e);
@@ -104,13 +117,17 @@ export async function WebContext(
   ctx.error = error;
 
   // Cookies support
-  ctx.request.cookies = qs.parse(ctx.request.headers.cookie || "");
+  ctx.request.cookies = qs.parse(
+    ctx.request.headers.cookie.replace(/; /g, "&")
+  );
 
   ctx.redirect = (location, status = 302, headers = {}) => {
     const res = ctx.response.raw();
     res.writeHead(status, {
       Location: location,
-      "Set-Cookie": qs.stringify(ctx.response.cookies),
+      "Set-Cookie": Object.keys(ctx.response.cookies).map(
+        key => `${key}=${ctx.response.cookies[key]}`
+      ),
       ...headers
     });
     res.end();
