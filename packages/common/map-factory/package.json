@@ -2,7 +2,7 @@
   "name": "@collaboratory/map-factory",
   "description": "A map factory utility",
   "authors": "Andrew Ewing <contact@aewing.io>",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "main": "dist/MapFactory.js",
   "files": [
     "dist/MapFactory.js",

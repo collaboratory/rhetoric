@@ -117,9 +117,9 @@ export async function WebContext(
   ctx.error = error;
 
   // Cookies support
-  ctx.request.cookies = qs.parse(
+  ctx.request.cookies = ctx.request.headers.cookie ? qs.parse(
     ctx.request.headers.cookie.replace(/; /g, "&")
-  );
+  ) : {};
 
   ctx.redirect = (location, status = 302, headers = {}) => {
     const res = ctx.response.raw();

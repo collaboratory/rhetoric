@@ -2,7 +2,7 @@
   "name": "@collaboratory/craft-component-app",
   "description": "The root application container of Craft applications",
   "authors": "Andrew Ewing <drew@collaboratory.io>",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "main": "dist/main.js",
   "module": "dist/main.js",
   "publishConfig": {

@@ -2,7 +2,7 @@
   "name": "@collaboratory/server-middleware-static",
   "description": "Static middleware for Craft server",
   "authors": "Andrew Ewing <drew@collaboratory.io>",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "main": "dist/main.js",
   "publishConfig": {
     "access": "public"

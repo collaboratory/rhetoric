@@ -2,7 +2,7 @@
   "name": "@collaboratory/emitterware-server",
   "description": "The core of the emitterware server",
   "authors": "Andrew Ewing <drew@collaboratory.io>",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "main": "dist/main.js",
   "publishConfig": {
     "access": "public"
@@ -35,6 +35,6 @@
     "build-clean": "npm run lint-fix && npm run clean && npm run build"
   },
   "dependencies": {
-    "rhetoric": "^0.1.1"
+    "rhetoric": "^0.1.4"
   }
 }
