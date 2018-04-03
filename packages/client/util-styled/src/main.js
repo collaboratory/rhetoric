@@ -8,7 +8,8 @@ import {
   borderRadius,
   color as overrideColor,
   bg,
-  textAlign
+  textAlign,
+  lineHeight
 } from "styled-system";
 import { radialGradient, darken, lighten } from "polished";
 
@@ -163,6 +164,7 @@ const overrides = css`
   ${fontSize};
   ${borderColor};
   ${borderRadius};
+  ${lineHeight};
   ${textAlign};
   ${float};
 `;

@@ -33,6 +33,9 @@
     "clean": "rm dist/main.js",
     "build-clean": "npm run lint-fix && npm run clean && npm run build"
   },
+  "dependencies": {
+    "@collaboratory/craft-util-styled": "0.1.1"
+  },
   "peerDependencies": {
     "react": "^16.2.0",
     "styled-components": "^3.2.3"
