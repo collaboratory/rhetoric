@@ -1,9 +1,15 @@
 import styled from "styled-components";
-import { width, fontSize, fontFamily, color } from "styled-system";
+import { width, height, fontSize, fontFamily, color, textAlign } from "styled-system";
 
 export const Box = styled.div`
-  ${width};
-  ${fontSize} ${fontFamily};
+  display: inline-block;
+  line-height: 24px;
+  vertical-align: middle;
   ${color};
+  ${width};
+  ${height};
+  ${textAlign};
+  ${fontSize}; 
+  ${fontFamily};
 `;
 export default Box;

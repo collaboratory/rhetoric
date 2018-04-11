@@ -4,13 +4,13 @@ import { overrides } from "@collaboratory/craft-util-styled";
 
 const Input = styled.input`
   appearance: none;
-  padding: 2px;
+  padding: 2px 8px;
   border-radius: 4px;
   line-height: 24px;
   border: 1px solid
-    ${props => props.theme.colors[props.outline || "primary-t-12"]};
+    ${props => props.theme.colors[props.outline || "primary-t-9"]};
   font-weight: bolder;
-  max-width: calc(100% - 6px);
+  max-width: calc(100% - 16px);
 
   &:focus {
     border: 1px solid ${props => props.theme.colors[props.outline || "primary"]};

@@ -11,7 +11,6 @@ const Field = styled.div`
   &:hover {
     ${Label} {
       color: ${props => props.theme.colors[props.outline || "primary-d-2"]};
-      font-weight: bolder;
     }
   }
 

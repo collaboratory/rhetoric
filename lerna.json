@@ -1,11 +1,12 @@
 {
-  "lerna": "2.5.1",
+  "lerna": "2.9.0",
   "packages": [
     "packages/client/*",
     "packages/common/*",
     "packages/server/*",
     "applications/aegisbot.io/web"
   ],
+  "npmClient": "yarn",
   "version": "independent",
   "independent": true
 }

@@ -19,13 +19,13 @@ const InputField = ({
 }) => {
   return (
     <Field {...fieldProps}>
-      <Box width={labelWidth}>
-        <Label htmlFor={name} {...labelProps}>
+      <Box width={labelWidth} textAlign="right">
+        <Label htmlFor={name} {...labelProps} mr={1}>
           {label}
         </Label>
       </Box>
       <Box width={inputWidth}>
-        <Input type={type} value={value} name={name} {...inputProps} />
+        <Input width={1} type={type} value={value} name={name} {...inputProps} />
       </Box>
     </Field>
   );

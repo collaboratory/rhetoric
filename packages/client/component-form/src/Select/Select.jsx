@@ -17,16 +17,15 @@ export default class Select extends Component {
     name: PropTypes.string.isRequired
   };
 
+  wrapper = null;
+  selectWrapper = null;
+
   dropDownHideTimeout = false;
 
   state = {
     label: "",
     value: "",
     toggled: false
-  };
-
-  static contextTypes = {
-    modal: PropTypes.object.isRequired
   };
 
   componentDidMount() {
@@ -73,9 +72,12 @@ export default class Select extends Component {
   };
 
   setValue = value => {
+    const label = this.getLabel(value);
     this.setState({
       value,
-      label: this.getLabel(value)
+      label
+    }, () => {
+      this.props.onChange({ value, label });
     });
   };
 
@@ -129,14 +131,13 @@ export default class Select extends Component {
 
   render() {
     const { value, toggled } = this.state;
-    const { onChange, options, ...next } = this.props;
+    const { options, ...next } = this.props;
 
     return (
       <div
         ref={ref => {
           this.wrapper = ref;
         }}
-        style={{ display: "inline-block" }}
         onMouseOut={this.onMouseOut}
         onMouseOver={this.onMouseOver}
       >
@@ -147,7 +148,6 @@ export default class Select extends Component {
             value={this.state.value}
           />
           <SelectContainer
-            onChange={this.onChange}
             value={value}
             toggled={toggled}
             {...next}

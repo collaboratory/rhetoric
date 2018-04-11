@@ -56,6 +56,6 @@
     "@collaboratory/craft-theme-default": "0.0.0",
     "@collaboratory/craft-util-styled": "0.0.0",
     "react": "^16.2.0",
-    "styled-components": "^3.2.3"
+    "styled-components": "^3.2.5"
   }
 }

@@ -25,7 +25,6 @@ const SelectRootArrow = css`
 
 const SelectRoot = styled.div`
   position: relative;
-  display: inline-block;
   cursor: pointer;
   background: ${props => props.theme.colors[props.bg || "light"]};
   color: ${props => props.theme.colors[props.color || "primary-l-2"]};
